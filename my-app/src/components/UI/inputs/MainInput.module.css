@@ -1,0 +1,20 @@
+.mainInput{
+    background-color: #232323;
+    color: #ebebeb;
+    padding: 15px;
+    border: 1px solid #383838;
+    border-radius: 12px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    width: 600px;
+    min-width: 100px;
+    max-width: 100%;
+    box-sizing: border-box;
+    font-size: 1em;
+}
+
+.mainInput:focus{
+    border: 1px solid #00afbe;
+    outline-width: 0;
+    transition: All 0.5s;
+}

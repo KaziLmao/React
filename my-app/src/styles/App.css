@@ -1,0 +1,144 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+li, a {
+    font-weight: 300;
+    font-size: 1em;
+    color: white;
+}
+
+a{
+    text-decoration: none;
+    transition: all .2s ease;
+}
+
+ul{
+    list-style-type:none;
+    padding: 0;
+}
+
+body{
+    background-color: black;
+    color: #ebebeb;
+}
+
+header {
+    background-color: rgba(0, 175, 190, 0.2);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    font-size: 1.2em;
+    width: 100%;
+}
+
+.header-container {
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.app-name{
+    font-size: 24px;
+}
+
+.app-name a{
+    font-weight: 600;
+}
+
+.header-nav-links {
+    list-style: none;
+}
+
+.header-nav-links li {
+    display: inline-block;
+    padding: 0 1em;
+}
+
+.App{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.content-container{
+    max-width: 80%;
+    min-width: 50%;
+}
+
+.form-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1em;
+}
+
+.post{
+    background-color: #232323;
+    display: flex;
+    padding: 1.5em;
+    margin-top: 1em;
+    border: 2px solid #00afbe;
+    border-radius: 12px;
+    justify-content: space-between;
+    align-items: start;
+}
+
+.post__content{
+    display: grid;
+    gap: 10px;
+}
+
+footer {
+    font-weight: 300;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-container {
+    max-width: 1170px;
+    margin: auto;
+}
+
+.footer-col {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 4em;
+}
+
+.footer-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 380px;
+    padding: 2em 3em;
+}
+
+.footer-title {
+    font-weight: 400;
+    font-size: 1.8em;
+}
+
+.footer-nav-links {
+    text-transform: none;
+    font-size: 1em;
+}
+
+.footer-text{
+    padding: 20px 0;
+}
+
+.footer-links-list {
+    padding: 10px 0;
+}

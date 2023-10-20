@@ -1,0 +1,39 @@
+import React, {useState} from 'react';
+import MainInput from "./UI/inputs/MainInput";
+import MainButton from "./UI/buttons/MainButton";
+
+const PostForm = ({create}) => {
+    const [post, setPost] = useState({
+        title: '',
+        body: '',
+    });
+
+    const addNewPost = (e) => {
+        e.preventDefault();
+        const newPost = {
+            ...post, id: Date.now()
+        };
+        create(newPost);
+        setPost({title: '', body: ''});
+    }
+
+    return (
+        <form className="form-container">
+            <MainInput
+                value={post.title}
+                onChange={e => setPost({...post, title: e.target.value})}
+                type="text"
+                placeholder="Название поста"
+            />
+            <MainInput
+                value={post.body}
+                onChange={e => setPost({...post, body: e.target.value})}
+                type="text"
+                placeholder="Описание поста"
+            />
+            <MainButton onClick={addNewPost}>Создать пост</MainButton>
+        </form>
+    );
+};
+
+export default PostForm;
