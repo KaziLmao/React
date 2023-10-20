@@ -17,7 +17,8 @@ function App() {
                 'there\'s something magical about the spirit of adventure. Tours are like a journey into the heart of ' +
                 'a place, a chance to uncover its hidden stories and soak in the vibes. So, where\'s your dream destination? ' +
                 'Are you more of a historical landmarks enthusiast or an off-the-beaten-path explorer? Share your tour tales! ' +
-                '🌍✨ #Wanderlust #TourLife'
+                '🌍✨ #Wanderlust #TourLife',
+            date:"10.10.2023, 01:01:01"
         },
         {
             id:2,
@@ -26,7 +27,8 @@ function App() {
                 'not alone in it is pretty mind-boggling. Whether you\'re a skeptic or a believer, the mystery of unidentified ' +
                 'flying objects adds a dash of intrigue to our earthly existence. Do you think we\'ve had close encounters, ' +
                 'or is it all just a play of light and shadows? Share your thoughts on the cosmic unknown! 👽🛸 ' +
-                '#UFOmysteries #GalacticWonderings'
+                '#UFOmysteries #GalacticWonderings',
+            date:"10.10.2023, 01:01:01"
         },
         {
             id:3,
@@ -34,7 +36,8 @@ function App() {
             body:'Embracing the beauty of small moments today. ☕️✨ Whether it\'s the first sip of your morning coffee or catching ' +
                 'a glimpse of a sunset, let\'s celebrate those simple joys that make life extraordinary. Sometimes, it\'s not about ' +
                 'the grand gestures but the quiet, soul-nourishing experiences that add color to our days. What\'s your favorite ' +
-                '"little thing" that never fails to brighten your mood? Share the joy! 🌈 #SimpleJoys #LifeInDetails'
+                '"little thing" that never fails to brighten your mood? Share the joy! 🌈 #SimpleJoys #LifeInDetails',
+            date:"10.10.2023, 01:01:01"
         },
     ]);
 

@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import MainInput from "./UI/inputs/MainInput";
 import MainButton from "./UI/buttons/MainButton";
 
@@ -8,10 +8,13 @@ const PostForm = ({create}) => {
         body: '',
     });
 
+    const [currTime, setCurrTime] = useState(new Date());
+
     const addNewPost = (e) => {
         e.preventDefault();
+
         const newPost = {
-            ...post, id: Date.now()
+            ...post, id: Date.now(), date: currTime.toLocaleString()
         };
         create(newPost);
         setPost({title: '', body: ''});

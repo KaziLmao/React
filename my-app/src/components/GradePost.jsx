@@ -37,7 +37,7 @@ const GradePost = function () {
             </div>
             <div className="dislikes-container">
                 <h1 className="grading-title">{disLikes}</h1>
-                <DeleteButton className="gradeBtn dislike-btn" onClick={isLiked === true ? console.log("disliked") : handleDisLike}>
+                <DeleteButton className="gradeBtn dislike-btn" onClick={isLiked === true ? console.log() : handleDisLike}>
                     👎
                 </DeleteButton>
             </div>
