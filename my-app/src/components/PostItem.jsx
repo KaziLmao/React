@@ -10,14 +10,14 @@ const PostItem = (props) => {
                     <strong>{props.number}. {props.post.title} </strong>
                     <span> {props.post.date}</span>
                 </div>
-                <div>
+                <div className="post__body">
                     <span>{props.post.body}</span>
                 </div>
                 <GradePost/>
             </div>
             <div className="post__btns">
                 <DeleteButton onClick={() => props.remove(props.post)}>
-                    Удалить
+                    ❌
                 </DeleteButton>
             </div>
         </div>

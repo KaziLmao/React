@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import MainInput from "./UI/inputs/MainInput";
 import MainButton from "./UI/buttons/MainButton";
+import BigInput from "./UI/inputs/BigInput";
 
 const PostForm = ({create}) => {
     const [post, setPost] = useState({
@@ -28,7 +29,7 @@ const PostForm = ({create}) => {
                 type="text"
                 placeholder="Название поста"
             />
-            <MainInput
+            <BigInput
                 value={post.body}
                 onChange={e => setPost({...post, body: e.target.value})}
                 type="text"

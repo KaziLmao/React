@@ -7,8 +7,20 @@
     /*justify-content: center;*/
 }
 
+.grading-title{
+    font-size: 18px;
+}
+
 .dislikes-container, .likes-container{
     margin: 5px;
+    padding: 5px;
+    text-align: center;
+}
+
+.dislikes-container button, .likes-container button{
+    padding: 6px;
+    font-size: 20px;
+    border-radius: 25px;
     text-align: center;
 }
 

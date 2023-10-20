@@ -8,12 +8,16 @@ const Header = () => {
                 <span className="app-name"><a href="#" className="header-btn-link">BlogBridges</a></span>
                 <nav className="header-nav">
                     <ul className="header-nav-links">
-                        <li><a href="#" className="header-btn-link">Главная</a></li>
                         <li><a href="#" className="header-btn-link">Посты</a></li>
+                        <li><a href="#" className="header-btn-link">Найти друзей</a></li>
+                        <li><a href="#" className="header-btn-link">Мои посты</a></li>
                         <li><a href="#" className="header-btn-link">О нас</a></li>
                     </ul>
                 </nav>
-                <MainButton>Войти</MainButton>
+                <div className="header-buttons">
+                    <MainButton>Войти</MainButton>
+                    <MainButton>Регистрация</MainButton>
+                </div>
             </div>
         </header>
     );

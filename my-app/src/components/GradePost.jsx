@@ -10,20 +10,12 @@ const GradePost = function () {
     const isActive= false;
 
     const handleLike = () => {
-        if (!isLiked) {
-            setLikes(likes + 1);
-        } else {
-            setLikes(likes - 1);
-        }
+        !isLiked ? setLikes(likes + 1) : setLikes(likes - 1);
         setIsLiked(!isLiked);
     };
 
     const handleDisLike = () => {
-        if (!isDisLiked) {
-            setDisLikes(disLikes + 1);
-        } else {
-            setDisLikes(disLikes - 1);
-        }
+        !isDisLiked ? setDisLikes(disLikes - 1) : setDisLikes(disLikes + 1);
         setIsDisLiked(!isDisLiked);
     };
 

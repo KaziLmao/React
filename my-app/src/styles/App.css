@@ -47,6 +47,14 @@ header {
     justify-content: space-around;
 }
 
+.header-btn-link {
+    text-transform: capitalize;
+}
+
+.header-buttons button {
+    margin-left: 10px;
+}
+
 .app-name{
     font-size: 24px;
 }
@@ -84,6 +92,12 @@ header {
     margin: 1em;
 }
 
+.posts-title{
+    text-align: center;
+    font-size: 28px;
+    padding: 10px 0;
+}
+
 .post{
     background-color: #232323;
     display: flex;
@@ -110,6 +124,9 @@ header {
 .post__title span {
     font-weight: 100;
     margin-right: 10px;
+}
+
+.post__body {
 }
 
 footer {
