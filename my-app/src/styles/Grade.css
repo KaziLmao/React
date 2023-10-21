@@ -1,9 +1,9 @@
 .grading-container{
     display: flex;
-    border: 2px solid #00afbe;
+    border: 2px solid #005555;
     margin-top: 15px;
     border-radius: 12px;
-    max-width: 132px;
+    max-width: 122px;
     /*justify-content: center;*/
 }
 
@@ -22,34 +22,4 @@
     font-size: 20px;
     border-radius: 25px;
     text-align: center;
-}
-
-.gradeBtn{
-    background-color: #9b9b9b;
-}
-
-.dislike-btn{
-    background-color: #6e001e;
-}
-
-.dislike-btn:hover {
-    background-color: #a61f1f;
-}
-
-.dislike-btn:active {
-    background-color: #7a1a1a;
-}
-
-.like-btn:hover {
-    background-color: #29b054;
-}
-
-.like-btn:active {
-    background-color: #1a7a30;
-}
-
-.gradeBtn:disabled,
-.gradeBtn[disabled]{
-    background-color: #3b3b3b;
-    cursor: default;
 }

@@ -7,7 +7,6 @@ const GradePost = function () {
     const [disLikes, setDisLikes] = useState(0);
     const [isLiked, setIsLiked] = useState(false);
     const [isDisLiked, setIsDisLiked] = useState(false);
-    const isActive= false;
 
     const handleLike = () => {
         !isLiked ? setLikes(likes + 1) : setLikes(likes - 1);

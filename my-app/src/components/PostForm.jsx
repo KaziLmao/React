@@ -5,6 +5,7 @@ import BigInput from "./UI/inputs/BigInput";
 
 const PostForm = ({create}) => {
     const [post, setPost] = useState({
+        user: '',
         title: '',
         body: '',
     });
@@ -18,11 +19,17 @@ const PostForm = ({create}) => {
             ...post, id: Date.now(), date: currTime.toLocaleString()
         };
         create(newPost);
-        setPost({title: '', body: ''});
+        setPost({user: '', title: '', body: ''});
     }
 
     return (
         <form className="form-container">
+            <MainInput
+                value={post.user}
+                onChange={e => setPost({...post, user: e.target.value})}
+                type="text"
+                placeholder="Ваш ник"
+            />
             <MainInput
                 value={post.title}
                 onChange={e => setPost({...post, title: e.target.value})}

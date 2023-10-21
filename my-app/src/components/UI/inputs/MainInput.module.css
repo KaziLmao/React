@@ -3,6 +3,9 @@
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     color: #ebebeb;
+}
+
+.mainInput, .bigInput {
     font-size: 1em;
     border-radius: 12px;
 }
