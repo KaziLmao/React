@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import '../styles/Grade.css';
+import classes from "./UI/inputs/MainInput.module.css";
 import MainButton from "./UI/buttons/MainButton";
 import DeleteButton from "./UI/buttons/DeleteButton";
 const GradePost = function () {
@@ -39,13 +40,13 @@ const GradePost = function () {
         <div className="grading-container">
             <div className="likes-container">
                 <h1 className="grading-title">{likes}</h1>
-                <MainButton className="gradeBtn like-btn" onClick={handleLike}>
+                <MainButton onClick={handleLike}>
                     👍
                 </MainButton>
             </div>
             <div className="dislikes-container">
                 <h1 className="grading-title">{dislikes}</h1>
-                <DeleteButton className="gradeBtn dislike-btn" onClick={handleDisLike}>
+                <DeleteButton onClick={handleDisLike}>
                     👎
                 </DeleteButton>
             </div>

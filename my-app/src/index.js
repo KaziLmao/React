@@ -6,16 +6,24 @@ import {
 } from "react-router-dom";
 import App from './App';
 import './styles/App.css';
+import Landing from "./pages/landing";
 
 const createRoot = document.getElementById('root');
 const root = ReactDOM.createRoot(createRoot);
 
-// const routes = createBrowserRouter([
-//
-// ]);
+const routes = createBrowserRouter([
+    {
+        path: '/posts',
+        element: <App />
+    },
+    {
+        path: '/home',
+        element: <Landing/>
+    }
+]);
 
 root.render(
     <StrictMode>
-        <App/>
+        <RouterProvider router={routes}/>
     </StrictMode>
 );
