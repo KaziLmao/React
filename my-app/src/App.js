@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import './styles/App.css';
 import PostList from "./components/PostList";
+import MainButton from "./components/UI/buttons/MainButton";
+import MainInput from "./components/UI/inputs/MainInput";
 import PostForm from "./components/PostForm";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
