@@ -10,12 +10,15 @@ import './styles/App.css';
 const createRoot = document.getElementById('root');
 const root = ReactDOM.createRoot(createRoot);
 
-// const routes = createBrowserRouter([
-//
-// ]);
+const routes = createBrowserRouter([
+    {
+        path: "/",
+        element: <App/>,
+    }
+]);
 
 root.render(
     <StrictMode>
-        <App/>
+        <RouterProvider router={routes}></RouterProvider>
     </StrictMode>
 );
