@@ -1,5 +1,6 @@
 import React from 'react';
 import MainButton from "./UI/buttons/MainButton";
+import {Link} from "react-router-dom";
 
 const Footer = () => {
     return (
@@ -8,10 +9,10 @@ const Footer = () => {
                 <div className="footer-col">
                     <div className="footer-nav">
                         <ul className="footer-nav-links">
-                            <li className="footer-links-list"><a href="#">Поддержка</a></li>
-                            <li className="footer-links-list"><a href="#">Контакты</a></li>
-                            <li className="footer-links-list"><a href="#">Instagram</a></li>
-                            <li className="footer-links-list"><a href="#">Telegram</a></li>
+                            <li className="footer-links-list"><Link to="/">Поддержка</Link></li>
+                            <li className="footer-links-list"><Link to="/">Контакты</Link></li>
+                            <li className="footer-links-list"><Link to="#">Instagram</Link></li>
+                            <li className="footer-links-list"><Link to="#">Telegram</Link></li>
                         </ul>
                     </div>
                     <div className="footer-nav">

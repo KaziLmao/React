@@ -1,20 +1,20 @@
-import {useEffect, useMemo, useState} from 'react';
-import './styles/App.css';
-import PostList from "./components/PostList";
-import MainButton from "./components/UI/buttons/MainButton";
-import PostForm from "./components/PostForm";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-import PostFilter from "./components/PostFilter";
-import MyModal from "./components/UI/modal/MyModal";
-import {usePosts} from "./hooks/usePosts";
-import PostService from "./API/PostService";
-import Loader from "./components/UI/loader/Loader";
-import {useFetching} from "./hooks/useFetching";
-import {getPagesCount} from "./utils/pages";
-import {usePagination} from "./hooks/usePagination";
+import React, {useEffect, useState} from 'react';
+import '../styles/App.css';
+import {usePosts} from "../hooks/usePosts";
+import {useFetching} from "../hooks/useFetching";
+import PostService from "../API/PostService";
+import {getPagesCount} from "../utils/pages";
+import Header from "../components/Header";
+import PostFilter from "../components/PostFilter";
+import MyModal from "../components/UI/modal/MyModal";
+import PostForm from "../components/PostForm";
+import MainButton from "../components/UI/buttons/MainButton";
+import Loader from "../components/UI/loader/Loader";
+import PostList from "../components/PostList";
+import Pagination from "../components/UI/pagination/pagination";
+import Footer from "../components/Footer";
 
-function App() {
+const App = () => {
     const [posts, setPosts] = useState([]);
     const [filter, setFilter] = useState({sort: '', query: ''})
     const [modal, setModal] = useState(false);
@@ -22,8 +22,6 @@ function App() {
     const [limit, setLimit] = useState(10);
     const [page, setPage] = useState(1);
     const sortedAndSearchedPosts = usePosts(posts, filter.sort, filter.query);
-
-    let pagesArray = usePagination(totalPages);
 
     const [fetchPosts, isPostsLoading, postError] = useFetching(async () => {
         const response = await PostService.getAll(limit, page);
@@ -34,7 +32,7 @@ function App() {
 
     useEffect(() => {
         fetchPosts();
-    }, []);
+    }, [page]);
 
     const createPost = (newPost) => {
         setPosts([...posts, newPost]);
@@ -43,6 +41,11 @@ function App() {
 
     const removePost = (post) => {
         setPosts(posts.filter(p => p.id !== post.id));
+    }
+
+    const changePage = (page) => {
+        setPage(page);
+        fetchPosts(limit, page);
     }
 
     return (
@@ -70,17 +73,15 @@ function App() {
                     ? <div className="loader-div"><Loader/></div>
                     : <PostList remove={removePost} posts={sortedAndSearchedPosts} title={"Лента постов"}/>
                 }
-                <div className="pages-div">
-                    {pagesArray.map(p =>
-                        <span className={page === p ? 'page page-current' : 'page'}>
-                            {p}
-                        </span>
-                    )}
-                </div>
+                <Pagination
+                    page={page}
+                    totalPages={totalPages}
+                    changePage={changePage}
+                />
             </div>
             <Footer/>
         </div>
-  );
-}
+    );
+};
 
 export default App;
