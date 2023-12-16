@@ -99,6 +99,28 @@ header {
     margin: 1em;
 }
 
+.post-form{
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+}
+
+.add-post-btn{
+    margin: 10px 50px;
+}
+
+.add-post-btn button{
+    background-color: rgba(0, 175, 190, 0.8);
+}
+
+.add-post-btn button:hover{
+    background-color: rgb(0, 175, 190);
+}
+
+.add-post-btn button:active{
+    background-color: rgba(0, 175, 190, 0.6);
+}
+
 .posts-title{
     text-align: center;
     font-size: 28px;
@@ -156,6 +178,30 @@ header {
 }
 
 .post__body {
+}
+
+.pages-div{
+    display: flex;
+    justify-content:center;
+    margin: 30px 0;
+}
+
+.page{
+    padding: .5em 1em;
+    border: 2px solid rgba(0, 165, 45, 0.5);
+    border-radius: 15px;
+    margin: 5px;
+    cursor: pointer;
+    transition: .1s ease-in-out;
+}
+
+.page:active{
+    border: 2px solid #00ff45;
+}
+
+.page-current{
+    font-weight: bold;
+    background-color: rgba(0, 165, 45, 0.8);
 }
 
 footer {

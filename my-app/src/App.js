@@ -11,15 +11,25 @@ import {usePosts} from "./hooks/usePosts";
 import PostService from "./API/PostService";
 import Loader from "./components/UI/loader/Loader";
 import {useFetching} from "./hooks/useFetching";
+import {getPagesCount} from "./utils/pages";
+import {usePagination} from "./hooks/usePagination";
 
 function App() {
     const [posts, setPosts] = useState([]);
     const [filter, setFilter] = useState({sort: '', query: ''})
     const [modal, setModal] = useState(false);
+    const [totalPages, setTotalPages] = useState(0);
+    const [limit, setLimit] = useState(10);
+    const [page, setPage] = useState(1);
     const sortedAndSearchedPosts = usePosts(posts, filter.sort, filter.query);
+
+    let pagesArray = usePagination(totalPages);
+
     const [fetchPosts, isPostsLoading, postError] = useFetching(async () => {
-        const posts = await PostService.getAll();
-        setPosts(posts)
+        const response = await PostService.getAll(limit, page);
+        setPosts(response.data);
+        const totalCount = response.headers['x-total-count']
+        setTotalPages(getPagesCount(totalCount, limit));
     })
 
     useEffect(() => {
@@ -39,17 +49,20 @@ function App() {
         <div className="App">
             <Header/>
             <div className="content-container">
-                <MainButton style={{marginTop: 30}} onClick={() => setModal(true)}>
-                    Создать пост
-                </MainButton>
-                <MyModal visible={modal} setVisible={setModal}>
-                    <PostForm create={createPost}/>
-                </MyModal>
-                <hr style={{margin: '15px 0'}}/>
-                <PostFilter
-                    filter={filter}
-                    setFilter={setFilter}
-                />
+                <div className="post-form">
+                    <PostFilter
+                        filter={filter}
+                        setFilter={setFilter}
+                    />
+                    <MyModal visible={modal} setVisible={setModal}>
+                        <PostForm create={createPost}/>
+                    </MyModal>
+                    <div className="add-post-btn">
+                        <MainButton onClick={() => setModal(true)}>
+                            Создать пост
+                        </MainButton>
+                    </div>
+                </div>
                 {postError &&
                     <h1>Произошла ошибка ${postError}</h1>
                 }
@@ -57,6 +70,13 @@ function App() {
                     ? <div className="loader-div"><Loader/></div>
                     : <PostList remove={removePost} posts={sortedAndSearchedPosts} title={"Лента постов"}/>
                 }
+                <div className="pages-div">
+                    {pagesArray.map(p =>
+                        <span className={page === p ? 'page page-current' : 'page'}>
+                            {p}
+                        </span>
+                    )}
+                </div>
             </div>
             <Footer/>
         </div>

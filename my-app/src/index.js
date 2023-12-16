@@ -18,7 +18,5 @@ const routes = createBrowserRouter([
 ]);
 
 root.render(
-    <StrictMode>
-        <RouterProvider router={routes}></RouterProvider>
-    </StrictMode>
+    <RouterProvider router={routes}></RouterProvider>
 );

@@ -12,6 +12,7 @@ const MyModal = ({children, visible, setVisible}) => {
     return (
         <div className={rootClasses.join(' ')} onClick={() => setVisible(false)}>
             <div className={cl.myModalContent} onClick={(e) => e.stopPropagation()}>
+                <h2>Напишите что у вас нового</h2>
                 {children}
             </div>
         </div>
