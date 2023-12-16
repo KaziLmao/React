@@ -1,6 +1,8 @@
 import React from 'react';
 import MainButton from "./UI/buttons/MainButton";
 import {Link} from "react-router-dom";
+import { Instagram } from 'lucide-react';
+import { Send } from 'lucide-react';
 
 const Footer = () => {
     return (
@@ -11,8 +13,8 @@ const Footer = () => {
                         <ul className="footer-nav-links">
                             <li className="footer-links-list"><Link to="/">Поддержка</Link></li>
                             <li className="footer-links-list"><Link to="/">Контакты</Link></li>
-                            <li className="footer-links-list"><Link to="#">Instagram</Link></li>
-                            <li className="footer-links-list"><Link to="#">Telegram</Link></li>
+                            <li className="footer-links-list"><Link to="#"><Instagram/></Link></li>
+                            <li className="footer-links-list"><Link to="#"><Send/></Link></li>
                         </ul>
                     </div>
                     <div className="footer-nav">

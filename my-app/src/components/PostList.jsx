@@ -13,7 +13,7 @@ const PostList = ({posts, title, remove}) => {
     }
 
     return (
-        <div>
+        <div className="post__list__container">
             <h1 className="posts-title">
                 {title}
             </h1>

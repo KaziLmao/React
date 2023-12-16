@@ -73,7 +73,7 @@ header {
     padding: 0 1em;
 }
 
-.App{
+.main{
     width: 100%;
     display: flex;
     justify-content: center;
@@ -135,8 +135,9 @@ header {
     margin-top: 1em;
     border: 2px solid #005555;
     border-radius: 12px;
-    justify-content: space-between;
-    align-items: start;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
 }
 
 .post-enter {
@@ -161,10 +162,21 @@ header {
     transition: opacity 400ms, transform 400ms;
 }
 
+.post__list__container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .post__content{
     display: grid;
     gap: 10px;
     width: 100%;
+}
+
+.post__content__container{
+    max-width: 100%;
 }
 
 .post__title{
@@ -173,12 +185,37 @@ header {
     justify-content: space-between;
 }
 
+.post__list__container div{
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .post__title span {
     font-weight: 100;
     margin-right: 10px;
 }
 
 .post__body {
+    margin: 10px 0;
+    width: 100%;
+}
+
+.post__btns__container{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.post__btns{
+    display: flex;
+    border: 2px solid #005555;
+    margin-top: 15px;
+    border-radius: 12px;
+}
+
+.post__btns button{
+    padding: 5px 10px 4px 9px;
+    margin: 30px 5px;
+    max-height: 39px;
 }
 
 .pages-div{

@@ -3,8 +3,6 @@
     border: 2px solid #005555;
     margin-top: 15px;
     border-radius: 12px;
-    max-width: 122px;
-    /*justify-content: center;*/
 }
 
 .grading-title{
@@ -18,8 +16,8 @@
 }
 
 .dislikes-container button, .likes-container button{
-    padding: 6px;
+    padding: 6px 10px 3px 9px;
     font-size: 20px;
-    border-radius: 25px;
+    border-radius: 15px;
     text-align: center;
 }

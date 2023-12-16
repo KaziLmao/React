@@ -13,6 +13,7 @@ import LoginPage from "./pages/LoginPage";
 import RegistrationPage from "./pages/RegistrationPage";
 import App from "./pages/App";
 import NotFoundPage from "./pages/NotFoundPage";
+import PostIdPage from "./pages/PostIdPage";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -24,6 +25,10 @@ const routes = createBrowserRouter([
     {
         path: "/posts",
         element: <App/>,
+    },
+    {
+        path: "/post/:id",
+        element: <PostIdPage/>,
     },
     {
         path: "/myposts",

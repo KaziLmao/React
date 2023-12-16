@@ -49,7 +49,7 @@ const App = () => {
     }
 
     return (
-        <div className="App">
+        <div className="main">
             <Header/>
             <div className="content-container">
                 <div className="post-form">
