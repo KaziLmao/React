@@ -1,21 +1,30 @@
-import {useMemo, useState} from 'react';
+import {useEffect, useMemo, useState} from 'react';
 import './styles/App.css';
 import PostList from "./components/PostList";
 import MainButton from "./components/UI/buttons/MainButton";
-import MainInput from "./components/UI/inputs/MainInput";
 import PostForm from "./components/PostForm";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import MySelect from "./components/UI/select/MySelect";
 import PostFilter from "./components/PostFilter";
 import MyModal from "./components/UI/modal/MyModal";
 import {usePosts} from "./hooks/usePosts";
+import PostService from "./API/PostService";
+import Loader from "./components/UI/loader/Loader";
+import {useFetching} from "./hooks/useFetching";
 
 function App() {
     const [posts, setPosts] = useState([]);
     const [filter, setFilter] = useState({sort: '', query: ''})
     const [modal, setModal] = useState(false);
     const sortedAndSearchedPosts = usePosts(posts, filter.sort, filter.query);
+    const [fetchPosts, isPostsLoading, postError] = useFetching(async () => {
+        const posts = await PostService.getAll();
+        setPosts(posts)
+    })
+
+    useEffect(() => {
+        fetchPosts();
+    }, []);
 
     const createPost = (newPost) => {
         setPosts([...posts, newPost]);
@@ -41,7 +50,13 @@ function App() {
                     filter={filter}
                     setFilter={setFilter}
                 />
-                <PostList remove={removePost} posts={sortedAndSearchedPosts} title={"Посты @Юзера"}/>
+                {postError &&
+                    <h1>Произошла ошибка ${postError}</h1>
+                }
+                {isPostsLoading
+                    ? <div className="loader-div"><Loader/></div>
+                    : <PostList remove={removePost} posts={sortedAndSearchedPosts} title={"Лента постов"}/>
+                }
             </div>
             <Footer/>
         </div>

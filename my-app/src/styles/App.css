@@ -80,6 +80,13 @@ header {
     flex-direction: column;
 }
 
+.loader-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px;
+}
+
 .content-container{
     max-width: 80%;
     min-width: 50%;
