@@ -16,8 +16,8 @@ const Header = () => {
                     </ul>
                 </nav>
                 <div className="header-buttons">
-                    <MainButton><Link to="/login">Войти</Link></MainButton>
-                    <MainButton><Link to="/registration">Регистрация</Link></MainButton>
+                    <Link to="/login"><MainButton>Войти</MainButton></Link>
+                    <Link to="/registration"><MainButton>Регистрация</MainButton></Link>
                 </div>
             </div>
         </header>

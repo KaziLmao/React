@@ -6,7 +6,7 @@ const Landing = () => {
     return (
         <div>
             <Header/>
-            Landing page
+                Landing page
             <Footer/>
         </div>
     );

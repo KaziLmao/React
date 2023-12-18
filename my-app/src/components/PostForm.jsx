@@ -3,7 +3,7 @@ import MainInput from "./UI/inputs/MainInput";
 import MainButton from "./UI/buttons/MainButton";
 import BigInput from "./UI/inputs/BigInput";
 
-const PostForm = ({create}) => {
+const PostForm = ({create, user}) => {
     const [post, setPost] = useState({
         user: '',
         title: '',
@@ -21,15 +21,20 @@ const PostForm = ({create}) => {
         create(newPost);
         setPost({user: '', title: '', body: ''});
     }
+    // console.log(user);
 
     return (
         <form className="form-container">
-            <MainInput
-                value={post.user}
-                onChange={e => setPost({...post, user: e.target.value})}
-                type="text"
-                placeholder="Ваш ник"
-            />
+            {
+                user
+                    ? <></>
+                    :<MainInput
+                        value={post.user}
+                        onChange={e => setPost({...post, user: e.target.value})}
+                        type="text"
+                        placeholder="Ваш ник"
+                    />
+            }
             <MainInput
                 value={post.title}
                 onChange={e => setPost({...post, title: e.target.value})}

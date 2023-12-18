@@ -1,61 +1,10 @@
-import React, {StrictMode} from 'react';
 import ReactDOM from 'react-dom/client';
-import {
-    createBrowserRouter,
-    RouterProvider,
-} from "react-router-dom";
 import './styles/App.css';
-import Landing from "./pages/Landing";
-import About from "./pages/About";
-import Profile from "./pages/Profile";
-import MyPosts from "./pages/MyPosts";
-import LoginPage from "./pages/LoginPage";
-import RegistrationPage from "./pages/RegistrationPage";
-import App from "./pages/App";
-import NotFoundPage from "./pages/NotFoundPage";
-import PostIdPage from "./pages/PostIdPage";
+import App from './App';
+import React from "react";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
-const routes = createBrowserRouter([
-    {
-        path: "/",
-        element: <Landing/>,
-    },
-    {
-        path: "/posts",
-        element: <App/>,
-    },
-    {
-        path: "/post/:id",
-        element: <PostIdPage/>,
-    },
-    {
-        path: "/myposts",
-        element: <MyPosts/>,
-    },
-    {
-        path: "/profile",
-        element: <Profile/>,
-    },
-    {
-        path: "/about",
-        element: <About/>,
-    },
-    {
-        path: "/login",
-        element: <LoginPage/>,
-    },
-    {
-        path: "/registration",
-        element: <RegistrationPage/>,
-    },
-    {
-        path: "*",
-        element: <NotFoundPage/>,
-    }
-]);
-
 root.render(
-    <RouterProvider router={routes}></RouterProvider>
+    <App/>
 );

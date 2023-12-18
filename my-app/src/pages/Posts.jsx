@@ -14,7 +14,7 @@ import PostList from "../components/PostList";
 import Pagination from "../components/UI/pagination/pagination";
 import Footer from "../components/Footer";
 
-const App = () => {
+const Posts = ({user}) => {
     const [posts, setPosts] = useState([]);
     const [filter, setFilter] = useState({sort: '', query: ''})
     const [modal, setModal] = useState(false);
@@ -48,6 +48,8 @@ const App = () => {
         fetchPosts(limit, page);
     }
 
+    // console.log(user);
+
     return (
         <div className="main">
             <Header/>
@@ -58,7 +60,7 @@ const App = () => {
                         setFilter={setFilter}
                     />
                     <MyModal visible={modal} setVisible={setModal}>
-                        <PostForm create={createPost}/>
+                        <PostForm user={user} create={createPost}/>
                     </MyModal>
                     <div className="add-post-btn">
                         <MainButton onClick={() => setModal(true)}>
@@ -84,4 +86,4 @@ const App = () => {
     );
 };
 
-export default App;
+export default Posts;
