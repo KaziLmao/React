@@ -1,30 +1,56 @@
 # TSIS PROJECT react-fall2023
 
-## Available Scripts
+## Project description
 
-In the project directory, you can run:
+This project named "BlogBridges" - is web application about posts something like forum.
+
+## Installation and Running
+
+1. Clone the repository to your computer:
+
+### `git clone https://github.com/your-user/react-project.git`
+
+2. Navigate to the project directory:
+
+### `cd react-project`
+
+3. Install dependencies:
+
+### `npm install`
+
+4. Start the project:
 
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+The application will be accessible at http://localhost:3000.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## File structure
 
-### `npm test`
++ src/
+  + Api/
+  + components/
+  + hooks/
+  + pages/
+  + router/
+  + styles/
+  + utils/
+  + App.js
+  + index.js
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Key features
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-### `npm run eject`
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. List of posts from fake API https://jsonplaceholder.typicode.com/posts/
+2. Post manipulations:
+   + Adding
+   + Deleting
+   + Like
+   + Dislike
+   + Search
+   + Filter by:
+        + Post title
+        + Post body
+3. Comments for each post
+4. Basic authentication
+5. Routing:
+   + Public pages - for guest users
+   + Private pages - for authorized users
